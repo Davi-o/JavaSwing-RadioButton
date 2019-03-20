@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package view;
 
 import java.awt.event.KeyEvent;
@@ -11,7 +6,9 @@ import model.Produto;
 
 /**
  *
- * @author Alunos
+ * @author Davi, Maria Rita
+ * @since 20/03
+ * @version 1.0
  */
 public class UICadProduto extends javax.swing.JFrame {
     private static final Produto p = new Produto();
