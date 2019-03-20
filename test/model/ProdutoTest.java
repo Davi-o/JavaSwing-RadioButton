@@ -13,10 +13,10 @@ import static org.junit.Assert.*;
  * @since 20/03
  * @version 1.0
  */
-public class PessoaTest {
+public class ProdutoTest {
     private static final Produto p = new Produto();
     
-    public PessoaTest() { }
+    public ProdutoTest() { }
     
     @BeforeClass
     public static void setUpClass() { }
@@ -28,6 +28,8 @@ public class PessoaTest {
     public void setUp() {
         p.setNomeProduto("Leite");
         p.setTipoProduto("Alimento");
+        p.setValorProduto(5.0);
+        p.setQtdProduto(2);
     }
     
     @After
@@ -41,4 +43,12 @@ public class PessoaTest {
     public void testVerificarProduto() {
         assertEquals("Comestivel", p.verificarProduto());
     }    
+    
+    /**
+     * Test of verificarSexo method, of class Produto.
+     */
+    @Test
+    public void testValorTotal() {
+        assertEquals(10, p.valorTotal(), 0.0);
+    }
 }

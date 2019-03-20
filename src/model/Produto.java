@@ -10,12 +10,15 @@ public class Produto {
     private String nomeProduto;
     private String tipoProduto;
     private double valorProduto;
-
+    private int qtdProduto;
+    
     public Produto() { }
     
-    public Produto(String nomeProduto, String tipoProduto) {
+    public Produto(String nomeProduto, String tipoProduto, double valorProduto, int qtdProduto) {
         this.nomeProduto = nomeProduto;
         this.tipoProduto = tipoProduto;
+        this.valorProduto = valorProduto;
+        this.qtdProduto = qtdProduto;
     }
     
     //getters
@@ -42,8 +45,21 @@ public class Produto {
     public void setValorProduto(double valorProduto) {
         this.valorProduto = valorProduto;
     }
-    //setters
 
+    public int getQtdProduto() {
+        return qtdProduto;
+    }
+
+    public void setQtdProduto(int qtdProduto) {
+        this.qtdProduto = qtdProduto;
+    }
+    
+    //setters
+    
+    public double valorTotal(){
+        return this.valorProduto * this.qtdProduto;
+    }
+    
     public String verificarProduto(){
         if(this.tipoProduto.equals("Alimento")){
             return "Comestivel";
@@ -57,7 +73,12 @@ public class Produto {
     
     @Override
     public String toString() {
-        return "Nome do produto: " + nomeProduto + "\n Valor do produto: " + valorProduto + "\n Tipo do produto: " + tipoProduto + "\n Verificar Produto: "+ verificarProduto();
+        return "Nome do produto: " + this.nomeProduto +
+               "\n Valor do produto: R$" + this.valorProduto +
+               "\n Valor total: R$" + valorTotal() +
+               "\n Quantidade de produtos: " + this.qtdProduto +
+               "\n Tipo do produto: " + this.tipoProduto +
+               "\n Verificar Produto: "+ verificarProduto();
     }
     
     
